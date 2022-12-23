@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>My Three Js site.</title>
+  </head>
+  <body>
+   
+    <nav>
+      <h1>Three Js</h1>
+      <ul>
+        <li onclick="showimg()"> support</li>
+        <li><a href="https://en.wikipedia.org/wiki/Three.js" target="_blank">about</a></li>
+      </ul>
+    </nav>
+    <img class="img" id="img" onclick="removeimg()" src="palmpay.png" alt="">
+    <div class="container">
+    <h1>wow!!!!,Give it<br>a spin</h1></div>
+    <canvas  onclick="removeimg()" class="canvas"></canvas>
+    <script type="module" src="/main.js"></script>
+    <script>
+      
+function showimg(){
+
+document.getElementById("img").style.width="50%"
+
+}
+
+function removeimg(){
+
+document.getElementById("img").style.width="0%"
+}
+    </script>
+  </body>
+</html>
