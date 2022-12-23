@@ -26,34 +26,33 @@ scene.add(light)
 document.querySelector("nav").style.width=`${window.innerWidth}px`
 //hdr
 const hdr = new RGBELoader()
-hdr.load('./gltf/house.hdr',(texture)=>{
+hdr.load('./gltf/forest.hdr',(texture)=>{
     texture.mapping=THREE.EquirectangularReflectionMapping
     scene.background=texture
     scene.environment=texture
 
-})
+//})
 // const box=new THREE.BoxGeometry(5,5,5)
 // const skinColor=new THREE.MeshBasicMaterial({color:"blue"})
 // const combine=new THREE.Mesh(box,skinColor)
 // const textureLoader=new THREE.TextureLoader
 //loaer
-// const loader=new GLTFLoader()
-// loader.load("./gltf/house.gltf",(gltf)=>{
-//     scene.add(gltf.scene);
-//     function animate(){
-//         requestAnimationFrame(animate);
-//     gltf.scene.rotation.y+=0.005
-//     // gltf.scene.rotation.z+=0.01
-//     gltf.scene.position.x=1
-//     gltf.scene.position.z=5
-//     gltf.scene.position.y=-1
+ const loader=new GLTFLoader()
+ loader.load("./gltf/house.gltf",(gltf)=>{
+     scene.add(gltf.scene);
+     function animate(){
+         requestAnimationFrame(animate);
+     
+     gltf.scene.position.x=1
+     gltf.scene.position.z=5
+   gltf.scene.position.y=-1
 
     
-//      }
-//      const tl=gsap.timeline({defaults:{duration:3}})
-//     tl.fromTo(gltf.scene.scale,{z:0,x:0,y:0},{z:1,y:1,x:1})
-//     animate()
-//     })
+    }
+   const tl=gsap.timeline({defaults:{duration:3}})
+  tl.fromTo(gltf.scene.scale,{z:0,x:0,y:0},{z:1,y:1,x:1})
+   animate()
+  })
 
   
 //update screen size
